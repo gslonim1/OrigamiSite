@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Origami</title>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  
+	
+	<link rel="stylesheet" type="text/css" href="fadeIn.css">
+	  
+	  
+	<style>
+
+
+
+
+
+
+  @font-face
+	{
+		font-family: Uni Sans Heavy;
+		src: url(Origram.otf);
+	}
+
+
+	body{
+	overflow:hidden;
+	
+	font-family:Uni Sans Heavy;
+
+	}
+
+  #craneText{
+    text-align: center;
+    font-size:750%;
+    z-index:1;
+    position:relative;
+    top:300px;
+
+  }
+
+
+    #crane{
+      width:100%;
+      height:100%;
+
+
+      opacity:0.9;
+    }
+	
+	#frames{
+	padding-top:40%; 
+	position:relative; 
+	left:32%;
+	width:40%;
+	}
+	
+	#back{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:105%;
+	left:0%;
+	}
+	
+	
+	.circleBase {
+    border-radius: 50%;
+    
+	}
+
+
+	.type2 {
+		width: 50px;
+		height: 50px;
+		background: #fff;
+		border: 3px solid #000;
+		text-align:center;
+		
+		
+		padding:5px;
+		font-size:50px;
+		z-index:1;
+	}
+		
+
+
+	</style>
+
+	<script>
+	cr=0; 
+	images = [1,2,3,4,5,6,7,8,9,10,11,12];
+	
+	
+	
+	
+	
+
+	function display()
+	{
+		myImage=document.getElementById("frames");
+		myImage.src = "Origami-Crane-Frames/" + images[cr] + ".gif"; 	
+	}
+	
+	
+	</script>
+
+
+
+
+  </head>
+  <body  >
+
+
+
+    <div class="animate-flicker" style="" >
+      <img id="crane" style="width:100%; height:100%; position:absolute; top:0%; left:0%; padding-bottom:100px" src="origami-crane.jpg" />
+      <h1 id="craneText"> Crane </h1>
+    </div>
+
+
+	
+<img id="back" src="blueBack.jpg"/>
+
+<div style="font-size:1000%; position:absolute;top:140%; left:6%; text-align:center;"> Model Coming Soon </div>
+
+
+
+
+
+<script src="scrollDown.js"></script>
+	  
+
+
+
+
+
+  </body>
+</html>

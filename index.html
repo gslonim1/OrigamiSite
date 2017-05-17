@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Origami</title>
+
+
+	<link rel="stylesheet" type="text/css" href="scrollAnimation.css">
+	<style>
+
+
+
+
+
+
+	#background{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:120%;
+
+	opacity:0.6;
+
+	}
+
+	@font-face
+	{
+		font-family: Uni Sans Heavy;
+		src: url(Origram.otf);
+	}
+
+
+	body{
+	overflow:hidden;
+
+	font-family:Uni Sans Heavy;
+
+	}
+
+	h1{
+		font-size:11em;
+		text-align:center;
+	}
+
+	h2{
+	text-align:center;
+	}
+
+
+	#letters{
+	position:relative;
+	left:13%;
+	z-index:-1;
+	width:83%;
+	}
+
+	div{
+
+	width:100%;
+
+	height:10000px;
+	position:absolute;
+	top:105%;
+	left:0%;
+	}
+
+	#ship{
+	width:100%;
+	height:10%;
+	position:absolute;
+	top:0%;
+	left:0%;
+	z-index:-1;
+  opacity:0.95;
+
+	}
+
+
+
+
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	(function() {
+	var delay = false;
+
+  $(document).on('mousewheel DOMMouseScroll', function(event) {
+    event.preventDefault();
+    if(delay) return;
+
+    delay = true;
+    setTimeout(function(){delay = false},200)
+
+    var wd = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+
+    var a= document.getElementsByTagName('a');
+    if(wd < 0) {
+      for(var i = 0 ; i < a.length ; i++) {
+        var t = a[i].getClientRects()[0].top;
+        if(t >= 40) break;
+      }
+    }
+    else {
+      for(var i = a.length-1 ; i >= 0 ; i--) {
+        var t = a[i].getClientRects()[0].top;
+        if(t < -20) break;
+      }
+    }
+    $('html,body').animate({
+      scrollTop: a[i].offsetTop
+    });
+  });
+})();
+</script>
+
+
+
+  </head>
+  <body>
+
+
+  <img id="background" src="origamiBackground.jpg"/>
+	<img id="letters" src="origamiLetters.png"/>
+
+	<section id="section05" class="demo">
+	<h1></h1>
+	<span></span>
+	</section>
+
+  
+
+
+
+
+	<div >
+	</br>
+	</br>
+	</br>
+	<h1 >
+	Choose A Model
+	<h1/>
+
+
+	<img id="ship" src="ships.jpg" />
+	<img style="border: 3px solid black; border-radius: 60%;
+  width:200px; height:200px; position:relative;
+  right:33%; bottom:60px; " src="origamiCrane.jpg" usemap="#cranemap"/>
+
+  <map name="cranemap">
+  <area shape="rect" coords="0,0,200,200" href="crane.html" alt="Sun">
+  </map>
+
+
+	</div>
+
+
+	<a style=" position:absolute; top:120%;"  name="A1"></a>
+
+
+
+  </body>
+</html>
